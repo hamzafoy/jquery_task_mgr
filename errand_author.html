@@ -18,7 +18,13 @@
     rel="stylesheet"
     >
 
-    <!--  Reset Styles  -->
+    <!--  Reset Styles & Importing CSS Resources  -->
+    <link 
+    href="resources/styles.css" 
+    type="text/css"
+    rel="stylesheet"
+    >
+
     <style>
         body {
           margin: 0 0;
@@ -44,16 +50,20 @@
 
     <div id="task-manager-screen">
 
-        <h1 id="task-manager__heading">
-            Errand Author
-        </h1>
+        <section class="task-mgr-header">
 
-        <p id="task-manager__description">
-            Add, Emphasize, & Delete Tasks all from your browser!
-        </p>
+            <h1 id="task-manager__heading">
+                Errand Author
+            </h1>
+
+            <p id="task-manager__description">
+                Add, Emphasize, & Delete Tasks all from your browser!
+            </p>
+
+        </section>
 
         <ul id="task-manager__list">
-            
+
         </ul>
 
     </div>
