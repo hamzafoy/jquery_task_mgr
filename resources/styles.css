@@ -40,5 +40,17 @@ font-family: 'Titillium Web', sans-serif;
 #task-manager__list {
     min-height: 50vh;
     margin: auto 0;
+    padding: 0;
     background-color: #fcefb1;
+}
+
+
+.task-list__item {
+    width: 100%;
+    padding: 2vh 0;
+    list-style-type: none;
+    background-color: #e4fcb1;
+    font-family: 'Mohave', sans-serif;
+    border-top: 3px ridge #b6c98d;
+    border-bottom: 3px outset #b6c98d;
 }
