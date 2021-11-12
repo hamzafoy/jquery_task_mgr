@@ -67,3 +67,17 @@ $(document).ready(function() {
 
 * `.html()` method can retrieve HTML tags & content from a selected element. It retrieves only the HTML inside the first element that matches the selector along with any of its *descendants*.
 * `.text()` method can retrieve the **text** only from a selected element. It will return the content from every element selected along with the text from any descendants. Be mindful of how this works when reading the text from multiple elements matching your provided selectors and how there won't be spaces between the text of the multiple elements.
+
+<br>
+
+## Updating Elements
+
+* `.html()` & `.text()` can take a function that passes new content to update the element selected before the method call. Ex:
+```
+$('p.rogue').html(function() {
+	return `<em>${variable}</em>`
+}
+```
+
+* `.replaceWith()` method replaces every element matching the selector with new content.
+* `.remove()` method removes all instances that match the selected element.
