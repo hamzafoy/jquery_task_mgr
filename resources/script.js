@@ -31,6 +31,16 @@ $('li').on('click', function() {
 });
 
 
+$('#add-task-form').on('submit', function(e) {
+    e.preventDefault();
+    let formValue = $('#addition-field').val();
+    let ulList = $(this).parent();
+    ulList.append(`<li class="task-list__item">${formValue}</li>`)
+    console.log(formValue);
+    console.log(ulList);
+});
+
+
 
 
 $('#task-manager-screen').hide().fadeIn(1500);
