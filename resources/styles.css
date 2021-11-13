@@ -55,3 +55,13 @@ font-family: 'Titillium Web', sans-serif;
     border-top: 3px ridge #b6c98d;
     border-bottom: 3px outset #b6c98d;
 }
+
+
+#add-task-form {
+    display: inline-block;
+    width: 100%;
+    padding: 2vh 0;
+    background-color: #e2d79f;
+    border-top: 3px ridge #c9bf8d;
+    border-bottom: 3px outset #c9bf8d;
+}

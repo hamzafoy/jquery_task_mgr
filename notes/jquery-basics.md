@@ -81,3 +81,4 @@ $('p.rogue').html(function() {
 
 * `.replaceWith()` method replaces every element matching the selector with new content.
 * `.remove()` method removes all instances that match the selected element.
+* Remember that `.html()` & `.replaceWith()` carry same security risks as the DOM's `innerHTML` property.
