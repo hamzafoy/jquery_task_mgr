@@ -2,22 +2,22 @@ $(function() {
 
 /* Click Event that helps detect double-clicks for mobile usage as well */
 let dbltouched = false;
-let editForm = '<input type="text" id="edit-field" name="edit-field" size="12">';
+/* let editForm = '<input type="text" id="edit-field" name="edit-field" size="12">'; */
 let ulList = $('#task-manager__list');
 
-$(document).on('click', 'li', function() {
+$(document).on('click', 'li', function(e) {
     let list = $(this).html();
     if(list.indexOf('input') != -1) {
         console.log(`This is already in edit mode!`)
     } else {
+        console.log($(this).text());
+        let clickedLiValue = $(this).text();
+        let editForm = `<input type="text" id="edit-field" name="edit-field" size="12" value=${clickedLiValue}>`;
         $(this).append(editForm);
         $('#edit-field').on('keypress', function(e) {
-            
             let key = e.keyCode;
-            console.log($(this).val());
             let formValue = $(this).val();
             let formParent = $(this).parent();
-            console.log($(this).parent());
             if (key == 13) {
                 formParent.replaceWith(`<li class="task-list__item">${formValue}</li>`);
             }
