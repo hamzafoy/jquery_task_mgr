@@ -11,8 +11,9 @@ $(document).on('click', 'li', function(e) {
         console.log(`This is already in edit mode!`)
     } else {
         console.log($(this).text());
-        let clickedLiValue = $(this).text();
-        let editForm = `<input type="text" id="edit-field" name="edit-field" size="12" value=${clickedLiValue}>`;
+        let clickedLiValue = $(this).text().trim();
+        console.log(clickedLiValue)
+        let editForm = `<input type="text" id="edit-field" name="edit-field" size="16" value="${clickedLiValue}" />`;
         $(this).append(editForm);
         $('#edit-field').on('keypress', function(e) {
             let key = e.keyCode;
