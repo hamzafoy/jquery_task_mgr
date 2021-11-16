@@ -12,7 +12,7 @@ a. Single clicks will open the list item to be editable.
 b. Double clicks will delete the list item.
 */
 $(document).on('click', 'li', function(e) {
-    let list = $(this).html();
+    let list = $(this).parent().html();
     /*
     This if statement checks to see if the input/edit field has already been added, if
     the edit field is already present on a given list item, a 2nd one is NOT added.
