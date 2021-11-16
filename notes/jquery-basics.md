@@ -82,3 +82,18 @@ $('p.rogue').html(function() {
 * `.replaceWith()` method replaces every element matching the selector with new content.
 * `.remove()` method removes all instances that match the selected element.
 * Remember that `.html()` & `.replaceWith()` carry same security risks as the DOM's `innerHTML` property.
+
+<br>
+
+## Inserting Elements
+
+* `.before()` & `.after()` will insert content before or after the selected element.
+* `.prepend()` & `.append()` will insert content inside the selected element either before the closing tag or after the opening tag. Please note that there is a `.prependTo()` & `.appendTo()` method that work the other way around.
+
+<br>
+
+## Dealing with Attributes
+
+* `.attr()` & `.removeAttr()` methods work on another element and can be used to update an existing attribute or set a new attribute that didn't previously exist.
+`$('li#one').attr('id')`, where only an attribute name is provided to `.attr()`, can be used to store an attribute's value.
+`$('li#two').attr('id', 'cold')`, with both an attribute's name and a new value for said attribute, will update the element's attribute.
