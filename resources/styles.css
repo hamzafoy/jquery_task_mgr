@@ -65,3 +65,8 @@ font-family: 'Titillium Web', sans-serif;
     border-top: 3px ridge #c9bf8d;
     border-bottom: 3px outset #c9bf8d;
 }
+
+
+#edit-field {
+    font-family: 'Mohave', sans-serif;
+}

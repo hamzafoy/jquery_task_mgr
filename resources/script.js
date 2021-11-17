@@ -25,7 +25,7 @@ $(document).on('click', 'li', function(e) {
         use said text as the default text that a user can change and alter.
         */
         let clickedLiValue = $(this).text().trim();
-        let editForm = `<input type="text" id="edit-field" name="edit-field" size="16" value="${clickedLiValue}" />`;
+        let editForm = `<input type="text" id="edit-field" name="edit-field" size="20" value="${clickedLiValue}" />`;
         $(this).append(editForm);
         //The user will press the 'Enter' button on keyboard to submit their edit on a clicked list item.
         $('#edit-field').on('keypress', function(e) {
@@ -52,8 +52,7 @@ $('#add-task-form').on('submit', function(e) {
     e.preventDefault();
     let formValue = $('#addition-field').val();
     ulList.append(`<li class="task-list__item">${formValue}</li>`)
-    console.log(formValue);
-    console.log(ulList);
+    $('#addition-field').val('');
 });
 
 
