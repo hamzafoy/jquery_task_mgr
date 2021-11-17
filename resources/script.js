@@ -47,11 +47,17 @@ $(document).on('click', 'li', function(e) {
     }, 300);
 });
 
-//This event listener listens for the add task form's submission and appends the ul with the created li.
+/*
+This event listener listens for the add task form's submission and appends 
+the ul with the created li.
+*/
 $('#add-task-form').on('submit', function(e) {
+    //Prevents page reload upon form submission
     e.preventDefault();
     let formValue = $('#addition-field').val();
+    //Appends a li with the value submitted in the add-task form
     ulList.append(`<li class="task-list__item">${formValue}</li>`)
+    //Clears the add-task form's input from the typed and submitted text
     $('#addition-field').val('');
 });
 
