@@ -92,8 +92,27 @@ $('p.rogue').html(function() {
 
 <br>
 
-## Dealing with Attributes
+## Dealing with Attributes & Styles
 
 * `.attr()` & `.removeAttr()` methods work on another element and can be used to update an existing attribute or set a new attribute that didn't previously exist.
 `$('li#one').attr('id')`, where only an attribute name is provided to `.attr()`, can be used to store an attribute's value.
 `$('li#two').attr('id', 'cold')`, with both an attribute's name and a new value for said attribute, will update the element's attribute.
+* `.removeAttr()` removes a specified attribute and its value from a selected element.
+* `.addClass()` & `.removeClass()` will add/remove a value to the existing class attribute on a selected element. It does not overwrite existing values in the class attribute.
+You can get and set css properties using `.css()` method.
+`let paragraphBackgroundColor = $('p').css('background-color')` will **get** the property specified as a first arg inside the `.css()` method.
+`$('p').css('background-color', '#fff333')` will **set** the property (first arg inside `.css()` method) to the value found in the 2nd arg inside `.css()` on a selected element.
+You can pass an object with properties as keys and desired values to change said properties in as the values of the object keys.
+
+<br>
+
+## Looping through JQuery Element Selections
+
+```
+$('h1').each(() => {
+	let collectedIds = this.id;
+	$(this).append(`<em>${collectedIds}</em>`)
+})
+```
+`.each()` will execute the same code to each element in the JQuery selection.
+You can use the **`this`** keyword to access the current element during the `.each()` loop.
