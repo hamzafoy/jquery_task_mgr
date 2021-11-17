@@ -58,7 +58,7 @@ $('#add-task-form').on('submit', function(e) {
     e.preventDefault();
     let formValue = $('#addition-field').val();
     //Appends a li with the value submitted in the add-task form
-    ulList.append(`<li class="task-list__item">${formValue}</li>`)
+    ulList.append(`<li class="task-list__item"><p>${formValue}</p></li>`)
     //Clears the add-task form's input from the typed and submitted text
     $('#addition-field').val('');
 });
