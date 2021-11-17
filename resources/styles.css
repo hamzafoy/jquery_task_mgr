@@ -66,19 +66,26 @@ font-family: 'Titillium Web', sans-serif;
 #add-task-form {
     display: inline-block;
     width: 100%;
-    padding: 2vh 0;
-    background-color: #B2A7F1;
-    border-top: 2px ridge #7460E6;
+    padding: 1.75vh 0;
+    background-color: #f1d7a7;
+    border-top: 2px ridge #E6B760;
 }
 
 
 #add-task-form label {
     padding-left: 2.25vw;
-    color: #f5f5f5;
+    color: #374243;
     font-family: 'Titillium Web', sans-serif;
 }
 
 
 #edit-field, #addition-field {
     font-family: 'Mohave', sans-serif;
+    font-size: 0.85em;
+}
+
+
+#edit-field {
+    background-color: #B2A7F1;
+    color: #f5f5f5;
 }
