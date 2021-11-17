@@ -26,7 +26,7 @@ $(document).on('click', 'li', function(e) {
         */
         let clickedLiValue = $(this).text().trim();
         let editForm = `<input type="text" id="edit-field" name="edit-field" size="20" value="${clickedLiValue}" />`;
-        $(this).append(editForm);
+        $(this).append($(editForm).hide().fadeIn(1500));
         //The user will press the 'Enter' button on keyboard to submit their edit on a clicked list item.
         $('#edit-field').on('keypress', function(e) {
             let key = e.keyCode;
