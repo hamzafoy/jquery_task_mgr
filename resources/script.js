@@ -24,8 +24,10 @@ $(document).on('click', 'li', function(e) {
         This else block will render an edit field that takes the clicked list item's text and
         use said text as the default text that a user can change and alter.
         */
+       console.log($(this).children())
         let clickedLiValue = $(this).text().trim();
         let editForm = `<input type="text" id="edit-field" name="edit-field" size="20" value="${clickedLiValue}" />`;
+        $(this).children('p').hide();
         $(this).append($(editForm).hide().fadeIn(1500));
         //The user will press the 'Enter' button on keyboard to submit their edit on a clicked list item.
         $('#edit-field').on('keypress', function(e) {
@@ -33,7 +35,7 @@ $(document).on('click', 'li', function(e) {
             let formValue = $(this).val();
             let formParent = $(this).parent();
             if (key == 13) {
-                formParent.replaceWith(`<li class="task-list__item">${formValue}</li>`);
+                formParent.replaceWith(`<li class="task-list__item"><p>${formValue}</p></li>`);
             }
         });
     }

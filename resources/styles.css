@@ -63,6 +63,11 @@ font-family: 'Titillium Web', sans-serif;
 }
 
 
+.task-list__item p {
+    display: inline;
+}
+
+
 #add-task-form {
     display: inline-block;
     width: 100%;
