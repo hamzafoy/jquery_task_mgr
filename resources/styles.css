@@ -14,7 +14,7 @@ font-family: 'Titillium Web', sans-serif;
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    background-color: aliceblue;
+    background-color: #E2EF95;
 }
 
 
@@ -24,6 +24,7 @@ font-family: 'Titillium Web', sans-serif;
 
 
 #task-manager__heading {
+    color: #374243;
     font-family: 'Titillium Web', sans-serif;
     font-size: 2rem;
     text-align: center;
@@ -31,8 +32,10 @@ font-family: 'Titillium Web', sans-serif;
 
 
 #task-manager__description {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #374243;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 0.8rem;
+    font-weight: 100;
     text-align: center;
 }
 
@@ -41,7 +44,7 @@ font-family: 'Titillium Web', sans-serif;
     min-height: 50vh;
     margin: auto 0;
     padding: 0;
-    background-color: #fcefb1;
+    background-color: #E2EF95;
 }
 
 
@@ -50,10 +53,13 @@ font-family: 'Titillium Web', sans-serif;
     width: 100%;
     padding: 1.75vh 0;
     list-style-type: none;
-    background-color: #e4fcb1;
+    background-color: #B2A7F1;
+    color: #f5f5f5;
     font-family: 'Mohave', sans-serif;
-    border-top: 3px ridge #b6c98d;
-    border-bottom: 3px outset #b6c98d;
+    font-size: 1.25em;
+    font-weight: 500;
+    border-top: 2px ridge #7460E6;
+    border-bottom: 2px outset #7460E6;
 }
 
 
@@ -61,13 +67,14 @@ font-family: 'Titillium Web', sans-serif;
     display: inline-block;
     width: 100%;
     padding: 2vh 0;
-    background-color: #e2d79f;
-    border-top: 3px ridge #c9bf8d;
-    border-bottom: 3px outset #c9bf8d;
+    background-color: #B2A7F1;
+    border-top: 2px ridge #7460E6;
 }
 
 
 #add-task-form label {
+    padding-left: 2.25vw;
+    color: #f5f5f5;
     font-family: 'Titillium Web', sans-serif;
 }
 
