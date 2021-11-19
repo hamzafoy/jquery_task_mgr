@@ -94,3 +94,10 @@ font-family: 'Titillium Web', sans-serif;
     background-color: #dedaf9;
     color: #374243;
 }
+
+
+#addition-field {
+    background-color: #c0ac85;
+    color: #f5f5f5;
+    font-weight: 600;
+}
