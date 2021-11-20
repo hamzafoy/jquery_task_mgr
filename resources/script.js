@@ -22,10 +22,10 @@ $(document).on('click', 'li', function(e) {
         let editModeActiveMsg = `<p class="task-dashboard__msg">This is already in edit mode!</p>`;
         if (!dashboard.children().is('.task-dashboard__msg')) {
             dashboard.append(editModeActiveMsg)
-            dashboard.children().fadeOut(5000);
+            dashboard.children().fadeOut(3000);
         } else {
             dashboard.children().replaceWith(editModeActiveMsg)
-            dashboard.children().fadeOut(5000);
+            dashboard.children().fadeOut(3000);
         }
     } else {
         /*
