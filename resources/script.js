@@ -48,7 +48,9 @@ $(document).on('click', 'li', function(e) {
         });
     }
     if (dbltouched) {
-        console.log(`Removing. . .`)
+        let removalMsg = `<p class="task-dashboard__msg">Removed task</p>`
+        dashboard.children().replaceWith(removalMsg)
+        dashboard.children().fadeOut(3000);
         $(this).remove();
     }
     dbltouched = true;
