@@ -4,6 +4,7 @@ $(function() {
 let dbltouched = false;
 //Storing some DOM elements in variables
 let ulList = $('#task-manager__list');
+let dashboard = $('#task-dashboard');
 
 /* 
 Creating an event listener for mouse clicks that are applied to the list items.
@@ -18,7 +19,14 @@ $(document).on('click', 'li', function(e) {
     the edit field is already present on a given list item, a 2nd one is NOT added.
     */
     if(list.indexOf('input') != -1) {
-        console.log(`This is already in edit mode!`)
+        let editModeActiveMsg = `<p class="task-dashboard__msg">This is already in edit mode!</p>`;
+        if (!dashboard.children().is('.task-dashboard__msg')) {
+            dashboard.append(editModeActiveMsg)
+            dashboard.children().fadeOut(5000);
+        } else {
+            dashboard.children().replaceWith(editModeActiveMsg)
+            dashboard.children().fadeOut(5000);
+        }
     } else {
         /*
         This else block will render an edit field that takes the clicked list item's text and

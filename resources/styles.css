@@ -109,9 +109,21 @@ font-family: 'Titillium Web', sans-serif;
 
 
 #task-dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     min-height: 10vh;
     width: 100%;
     background-color: #c0ac85;
     border-top: 3px ridge #E6B760;
     border-bottom: 3px ridge #E6B760;
+}
+
+
+.task-dashboard__msg {
+    align-self: center;
+    color: #f5f5f5;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+    font-weight: 100;
 }
