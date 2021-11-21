@@ -5,7 +5,7 @@ let dbltouched = false;
 //Storing some DOM elements in variables
 let ulList = $('#task-manager__list');
 let dashboard = $('#task-dashboard');
-
+//Taking inventory of # of task items to be displayed as initial on-load msg in dashboard
 let numOfTasks = new Array($('.task-list__item'));
 let standardMsg = `<p class="task-dashboard__msg">Welcome, you have ${numOfTasks[0].length} task(s) pending!</p>`
 dashboard.append(standardMsg);
@@ -28,6 +28,7 @@ $(document).on('click', 'li', function(e) {
         if (dashboard.children().is('.task-dashboard__msg')) {
             dashboard.children().replaceWith(editModeActiveMsg);
             dashboard.children().delay(1500).fadeOut(3000);
+            //Using setTimeout to give time for new message to appear, fade out, before listing # of tasks again
             setTimeout(() => {
                 dashboard.children().replaceWith(standardMsg);
                 dashboard.children().delay(5000).fadeOut(1500);
