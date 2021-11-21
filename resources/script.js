@@ -6,6 +6,11 @@ let dbltouched = false;
 let ulList = $('#task-manager__list');
 let dashboard = $('#task-dashboard');
 
+let numOfTasks = new Array($('.task-list__item'));
+console.log(numOfTasks)
+let standardMsg = `<p class="task-dashboard__msg">You have ${numOfTasks[0].length} task(s) pending!</p>`
+dashboard.append(standardMsg);
+
 /* 
 Creating an event listener for mouse clicks that are applied to the list items.
 The event listener will allow the following:
@@ -20,10 +25,7 @@ $(document).on('click', 'li', function(e) {
     */
     if(list.indexOf('input') != -1) {
         let editModeActiveMsg = `<p class="task-dashboard__msg">This is already in edit mode!</p>`;
-        if (!dashboard.children().is('.task-dashboard__msg')) {
-            dashboard.append(editModeActiveMsg)
-            dashboard.children().fadeOut(3000);
-        } else {
+        if (dashboard.children().is('.task-dashboard__msg')) {
             dashboard.children().replaceWith(editModeActiveMsg)
             dashboard.children().fadeOut(3000);
         }
@@ -68,10 +70,7 @@ $('#add-task-form').on('submit', function(e) {
     e.preventDefault();
     let formValue = $('#addition-field').val();
     let addedMsg = `<p class="task-dashboard__msg">Added a new task!</p>`
-    if (!dashboard.children().is('.task-dashboard__msg')) {
-        dashboard.append(addedMsg)
-        dashboard.children().fadeOut(3000);
-    } else {
+    if (dashboard.children().is('.task-dashboard__msg')) {
         dashboard.children().replaceWith(addedMsg)
         dashboard.children().fadeOut(3000);
     }
