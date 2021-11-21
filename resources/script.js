@@ -24,11 +24,14 @@ $(document).on('click', 'li', function(e) {
     the edit field is already present on a given list item, a 2nd one is NOT added.
     */
     if(list.indexOf('input') != -1) {
-        let editModeActiveMsg = `<p class="task-dashboard__msg edit-msg">You are still editing a task!</p>`;
+        let editModeActiveMsg = `<p class="task-dashboard__msg">You are still editing a task!</p>`;
         if (dashboard.children().is('.task-dashboard__msg')) {
             dashboard.children().replaceWith(editModeActiveMsg);
             dashboard.children().delay(1500).fadeOut(3000);
-            console.log(dashboard.children().is('.edit-msg'))
+            setTimeout(() => {
+                dashboard.children().replaceWith(standardMsg);
+                dashboard.children().delay(5000).fadeOut(1500);
+            }, 3000);
         }
         
     } else {
@@ -62,7 +65,6 @@ $(document).on('click', 'li', function(e) {
             dashboard.children().replaceWith(standardMsg);
             dashboard.children().delay(5000).fadeOut(1500);
         }, 3000);
-        
     }
     dbltouched = true;
     setTimeout(() => {
@@ -85,6 +87,12 @@ $('#add-task-form').on('submit', function(e) {
     }
     //Appends a li with the value submitted in the add-task form
     ulList.append(`<li class="task-list__item"><p>${formValue}</p></li>`)
+    let numOfTasks = new Array($('.task-list__item'));
+    standardMsg = `<p class="task-dashboard__msg">Welcome, you have ${numOfTasks[0].length} task(s) pending!</p>`
+    setTimeout(() => {
+        dashboard.children().replaceWith(standardMsg);
+        dashboard.children().delay(5000).fadeOut(1500);
+    }, 3000);
     //Clears the add-task form's input from the typed and submitted text
     $('#addition-field').val('');
 });
