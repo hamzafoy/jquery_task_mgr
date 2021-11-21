@@ -7,9 +7,9 @@ let ulList = $('#task-manager__list');
 let dashboard = $('#task-dashboard');
 
 let numOfTasks = new Array($('.task-list__item'));
-console.log(numOfTasks)
-let standardMsg = `<p class="task-dashboard__msg">You have ${numOfTasks[0].length} task(s) pending!</p>`
+let standardMsg = `<p class="task-dashboard__msg">Welcome, you have ${numOfTasks[0].length} task(s) pending!</p>`
 dashboard.append(standardMsg);
+dashboard.children().delay(5000).fadeOut(1500);
 
 /* 
 Creating an event listener for mouse clicks that are applied to the list items.
@@ -24,11 +24,13 @@ $(document).on('click', 'li', function(e) {
     the edit field is already present on a given list item, a 2nd one is NOT added.
     */
     if(list.indexOf('input') != -1) {
-        let editModeActiveMsg = `<p class="task-dashboard__msg">This is already in edit mode!</p>`;
+        let editModeActiveMsg = `<p class="task-dashboard__msg edit-msg">You are still editing a task!</p>`;
         if (dashboard.children().is('.task-dashboard__msg')) {
-            dashboard.children().replaceWith(editModeActiveMsg)
-            dashboard.children().fadeOut(3000);
+            dashboard.children().replaceWith(editModeActiveMsg);
+            dashboard.children().delay(1500).fadeOut(3000);
+            console.log(dashboard.children().is('.edit-msg'))
         }
+        
     } else {
         /*
         This else block will render an edit field that takes the clicked list item's text and
@@ -54,6 +56,13 @@ $(document).on('click', 'li', function(e) {
         dashboard.children().replaceWith(removalMsg)
         dashboard.children().fadeOut(3000);
         $(this).remove();
+        let numOfTasks = new Array($('.task-list__item'));
+        standardMsg = `<p class="task-dashboard__msg">Welcome, you have ${numOfTasks[0].length} task(s) pending!</p>`
+        setTimeout(() => {
+            dashboard.children().replaceWith(standardMsg);
+            dashboard.children().delay(5000).fadeOut(1500);
+        }, 3000);
+        
     }
     dbltouched = true;
     setTimeout(() => {
