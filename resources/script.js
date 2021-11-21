@@ -48,7 +48,7 @@ $(document).on('click', 'li', function(e) {
         });
     }
     if (dbltouched) {
-        let removalMsg = `<p class="task-dashboard__msg">Removed task</p>`
+        let removalMsg = `<p class="task-dashboard__msg">Removed an old task!</p>`
         dashboard.children().replaceWith(removalMsg)
         dashboard.children().fadeOut(3000);
         $(this).remove();
@@ -67,6 +67,14 @@ $('#add-task-form').on('submit', function(e) {
     //Prevents page reload upon form submission
     e.preventDefault();
     let formValue = $('#addition-field').val();
+    let addedMsg = `<p class="task-dashboard__msg">Added a new task!</p>`
+    if (!dashboard.children().is('.task-dashboard__msg')) {
+        dashboard.append(addedMsg)
+        dashboard.children().fadeOut(3000);
+    } else {
+        dashboard.children().replaceWith(addedMsg)
+        dashboard.children().fadeOut(3000);
+    }
     //Appends a li with the value submitted in the add-task form
     ulList.append(`<li class="task-list__item"><p>${formValue}</p></li>`)
     //Clears the add-task form's input from the typed and submitted text
